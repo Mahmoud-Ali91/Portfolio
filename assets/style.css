@@ -9,8 +9,34 @@ body {
 header {
   background: #fff;
   border-bottom: 1px solid #ddd;
+  padding: 0;
+}
+
+.header-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.header-content {
   padding: 1rem 2rem;
   text-align: center;
+}
+
+.header-content h1 {
+  margin: 0.5rem 0;
+}
+
+nav {
+  margin-top: 0.5rem;
 }
 
 nav a {
@@ -95,7 +121,11 @@ article a:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  header {
+  .header-image {
+    height: 150px;
+  }
+
+  .header-content {
     padding: 1rem;
   }
   
@@ -103,6 +133,10 @@ article a:hover {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+  
+  nav a {
+    margin: 0;
   }
   
   .card-grid {
