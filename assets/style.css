@@ -6,6 +6,7 @@ body {
   line-height: 1.6;
 }
 
+/* ===== HEADER ===== */
 header {
   background: #fff;
   border-bottom: 1px solid #ddd;
@@ -43,6 +44,11 @@ nav a {
   margin: 0 1rem;
   text-decoration: none;
   color: #555;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0066ff;
 }
 
 nav a.active {
@@ -50,6 +56,52 @@ nav a.active {
   color: #000;
 }
 
+/* ===== INTRO SECTION ===== */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60vh;
+  background: linear-gradient(135deg, #f5f8ff, #ffffff);
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  max-width: 700px;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.intro p {
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  background: #0066ff;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 102, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0052cc;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 82, 204, 0.3);
+}
+
+/* ===== CARD GRID ===== */
 section {
   padding: 2rem;
   max-width: 900px;
@@ -66,40 +118,16 @@ section {
   background: white;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn {
-  background: #0066ff;
-  color: white;
-  padding: 0.7rem 1.5rem;
-  text-decoration: none;
-  border-radius: 8px;
-  display: inline-block;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
-.btn:hover {
-  background: #0052cc;
-}
-
-footer {
-  background: #fff;
-  border-top: 1px solid #ddd;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* Additional styles for the profile image */
-.profile {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-/* Style for case study articles */
+/* ===== ARTICLES ===== */
 article {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
@@ -113,32 +141,73 @@ article:last-child {
 article a {
   color: #0066ff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 article a:hover {
   text-decoration: underline;
 }
 
-/* Responsive design */
+/* ===== PROFILE IMAGE ===== */
+.profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .header-image {
     height: 150px;
   }
 
-  .header-content {
-    padding: 1rem;
+  .intro {
+    height: 50vh;
+    padding: 2rem 1rem;
   }
-  
+
+  .intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   nav a {
     margin: 0;
   }
-  
+
   .card-grid {
     grid-template-columns: 1fr;
   }
