@@ -1,0 +1,62 @@
+_What_is_your_gender,_Are_you_a_shopping_person,_Rate_your_shopping_behavior_out_of_5,_Are_you_a_heavy_shopper,_How_many_times_do_you_go_to_super_market_a_week_(nearly),What_is_the_most_entertainment_ad_you_watched_recently_,Type_of_ads_you_prefer_or_watch_,How_many_adverts_do_you_watch_ads_daily_(nearly)_,Do_you_prefer_internet_ads_or_tv_ads_more_,Have_you_ever_search_for_an_advert_advert_before_,____What_is_you’re_the_most_advert_paradigm(method)_you_deal_with_,What_Do_you_watch_TV_more_advertisements_or_social_media_(internet)_advertisements_,How_many_times_did_you_search_for_an_advert_(nearly),When_I_watch_advertisements_I_buy_or_go_shopping_,"After_watching_advertisements_,_do_you_search_for_it_",Have_you_ever_bought_something_due_to_an_advertisements_,Did_you_think_that_the_advert_can_change_your_buying_behavior_,Did_you_find_information_in_the_adverts_beneficial_,Do_you_think_that_advertisements_is_important_for_businesses_,What_do_you_think_can_make_you_buy_from_an_advert_[The_way_introducing_product_],What_do_you_think_can_make_you_buy_from_an_advert_[the_script_],What_do_you_think_can_make_you_buy_from_an_advert_[the_actors_that_work_on_],What_do_you_think_can_make_you_buy_from_an_advert_[the_company_made_it]
+Male,Yes,3,2,4,Zain ad,Funny ads,10.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,6--9 times,1.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Agree,Strongly Disagree,Disagree
+Male,Yes,4,3,4,other,Funny ads,4.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,1--3 times,3.0,Yes,Yes,Yes,Yes,Yes,Neutral,Strongly Agree,Agree,Strongly Agree
+Male,Yes,3,3,4,Vodafone ad,Funny ads,4.0,Internet,Yes,Charities advertisements,Internet advertisements,1--3 times,3.0,Yes,No,No,Yes,Yes,Neutral,Neutral,Agree,Neutral
+Male,No,5,5,more than 6,other,Funny ads,1.0,Internet,No,business ads,Internet advertisements,more than 9 times,5.0,No,Yes,No,Yes,No,Strongly Disagree,Strongly Disagree,Strongly Disagree,Strongly Disagree
+Male,Yes,4,4,6,Etisalat ad,Funny ads,2.0,Internet,Yes,business ads,Internet advertisements,1--3 times,5.0,Yes,Yes,No,Yes,Yes,Neutral,Agree,Agree,Strongly Agree
+Male,Yes,1,1,2,Vodafone ad,Cartoon ads,1.0,TV,Yes,Telecom companies advertisements,TV advertisements,1--3 times,1.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Agree,Agree,Agree
+Male,Yes,4,3,2,Vodafone ad,Funny ads,4.0,Internet,Yes,Real estate ads,Internet advertisements,1--3 times,2.0,Yes,Yes,Yes,No,Yes,Agree,Neutral,Strongly Agree,Strongly Agree
+Male,No,3,1,2,other,Cartoon ads,5.0,TV,No,Real estate ads,TV advertisements,1--3 times,1.0,No,No,Yes,Yes,Yes,Neutral,Neutral,Neutral,Neutral
+Male,Yes,3,3,2,other,Funny ads,2.0,TV,No,,TV advertisements,1--3 times,2.0,No,Yes,No,Yes,Yes,Agree,Neutral,Neutral,Agree
+Male,No,5,1,2,other,Funny ads,3.0,Internet,Yes,Real estate ads,Internet advertisements,1--3 times,1.0,No,Yes,No,Yes,Yes,Strongly Agree,Neutral,Neutral,Strongly Agree
+Female,Yes,3,3,4,Vodafone ad,Funny ads,2.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,1--3 times,2.0,No,No,Yes,Yes,Yes,Agree,Neutral,Agree,Strongly Agree
+Male,Yes,3,2,2,other,Funny ads,4.0,Internet,Yes,Real estate ads,TV advertisements,3--6 times,3.0,No,Yes,No,Yes,No,Agree,Neutral,Strongly Agree,Disagree
+Male,Yes,3,3,6,other,Funny ads,7.0,TV,No,Telecom companies advertisements,TV advertisements,1--3 times,2.0,Yes,Yes,Yes,No,Yes,Agree,Neutral,Agree,Agree
+Female,No,2,2,2,Zain ad,Funny ads,2.0,TV,Yes,Telecom companies advertisements,Internet advertisements,1--3 times,1.0,No,No,No,No,No,Neutral,Agree,Neutral,Agree
+Male,No,2,2,2,Vodafone ad,Funny ads,4.0,Internet,No,Charities advertisements,TV advertisements,1--3 times,1.0,No,No,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Agree,Neutral
+Male,Yes,4,3,4,Vodafone ad,Funny ads,7.0,Internet,Yes,Real estate ads,TV advertisements,1--3 times,2.0,Yes,Yes,Yes,Yes,Yes,Strongly Agree,Agree,Neutral,Strongly Agree
+Male,No,5,1,2,other,Emotional ads,3.0,Internet,No,business ads,Internet advertisements,1--3 times,1.0,No,No,No,No,Yes,Strongly Agree,Agree,Neutral,Strongly Agree
+Female,Yes,5,3,,Zain ad,Funny ads,4.0,Internet,Yes,,TV advertisements,1--3 times,2.0,No,Yes,Yes,Yes,Yes,Disagree,Disagree,Disagree,Agree
+Female,Yes,2,1,4,Etisalat ad,Funny ads,2.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,1--3 times,1.0,Yes,Yes,Yes,Yes,Yes,Strongly Agree,Disagree,Disagree,Neutral
+Female,Yes,5,5,4,Vodafone ad,Cartoon ads,8.0,Internet,Yes,business ads,TV advertisements,1--3 times,4.0,No,Yes,No,Yes,Yes,Agree,Disagree,Disagree,Disagree
+Female,Yes,4,3,4,Vodafone ad,Funny ads,5.0,TV,No,Real estate ads,Internet advertisements,1--3 times,3.0,Yes,No,Yes,Yes,Yes,Strongly Agree,Agree,Strongly Agree,Strongly Agree
+Female,No,3,3,2,Vodafone ad,Funny ads,4.0,TV,No,Telecom companies advertisements,Internet advertisements,1--3 times,2.0,No,No,Yes,Yes,Yes,Agree,Neutral,Agree,Strongly Agree
+Male,Yes,5,5,6,Vodafone ad,Funny ads,8.0,TV,No,Real estate ads,TV advertisements,6--9 times,5.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Agree,Strongly Agree,Agree
+Male,No,3,3,2,other,Funny ads,5.0,Internet,No,business ads,Internet advertisements,1--3 times,2.0,No,Yes,Yes,Yes,Yes,Agree,Neutral,Neutral,Neutral
+Male,Yes,4,4,2,Vodafone ad,Emotional ads,5.0,TV,Yes,Charities advertisements,TV advertisements,3--6 times,3.0,Yes,Yes,Yes,Yes,Yes,Agree,Neutral,Neutral,Strongly Agree
+Male,Yes,3,3,2,Etisalat ad,Emotional ads,4.0,Internet,No,business ads,Internet advertisements,1--3 times,3.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Agree,Strongly Agree,Strongly Agree
+Female,Yes,4,3,2,Vodafone ad,Emotional ads,10.0,TV,No,Telecom companies advertisements,Internet advertisements,more than 9 times,1.0,No,Yes,No,No,Yes,Neutral,Neutral,Neutral,Agree
+Female,Yes,4,4,more than 6,Vodafone ad,Emotional ads,7.0,Internet,No,business ads,Internet advertisements,3--6 times,3.0,Yes,Yes,Yes,Yes,Yes,Agree,Agree,Neutral,Strongly Agree
+Female,Yes,3,3,2,Vodafone ad,Emotional ads,5.0,TV,Yes,Charities advertisements,TV advertisements,1--3 times,2.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Neutral,Strongly Disagree,Agree
+Female,Yes,4,3,more than 6,Vodafone ad,Emotional ads,4.0,TV,No,business ads,Internet advertisements,1--3 times,3.0,Yes,Yes,Yes,Yes,Yes,Strongly Agree,Neutral,Disagree,Agree
+Male,No,2,3,2,Vodafone ad,Emotional ads,3.0,Internet,No,Telecom companies advertisements,Internet advertisements,1--3 times,1.0,No,No,No,Yes,Yes,Neutral,Neutral,Neutral,Neutral
+Female,Yes,4,4,4,Vodafone ad,Funny ads,9.0,Internet,Yes,,Internet advertisements,3--6 times,1.0,No,Yes,No,No,Yes,Agree,Agree,Agree,Agree
+Male,No,1,2,2,other,Funny ads,1.0,TV,Yes,,TV advertisements,6--9 times,2.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Neutral,Strongly Agree
+Male,No,1,1,2,Vodafone ad,Funny ads,2.0,Internet,Yes,Real estate ads,Internet advertisements,1--3 times,1.0,No,Yes,No,No,Yes,Strongly Agree,Strongly Agree,Disagree,Strongly Disagree
+Female,Yes,3,3,4,Vodafone ad,Funny ads,4.0,Internet,No,Real estate ads,Internet advertisements,1--3 times,2.0,No,No,Yes,No,Yes,Agree,Neutral,Agree,Neutral
+Female,Yes,4,3,4,Vodafone ad,Emotional ads,4.0,Internet,No,Real estate ads,Internet advertisements,3--6 times,4.0,Yes,Yes,Yes,Yes,Yes,Strongly Agree,Neutral,Agree,Strongly Agree
+Female,Yes,2,5,2,other,Cartoon ads,1.0,TV,No,Telecom companies advertisements,TV advertisements,1--3 times,3.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Strongly Agree,Neutral
+Female,Yes,4,4,4,Vodafone ad,Emotional ads,2.0,Internet,Yes,business ads,Internet advertisements,1--3 times,5.0,Yes,No,No,Yes,No,Strongly Agree,Agree,Agree,Neutral
+Female,Yes,3,3,4,Vodafone ad,Funny ads,5.0,Internet,Yes,business ads,Internet advertisements,3--6 times,3.0,Yes,Yes,Yes,Yes,Yes,Neutral,Agree,Agree,Strongly Agree
+Female,Yes,5,3,more than 6,Vodafone ad,Funny ads,6.0,Internet,Yes,Charities advertisements,Internet advertisements,1--3 times,2.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Strongly Disagree,Strongly Agree
+Female,Yes,3,3,2,Vodafone ad,Emotional ads,5.0,Internet,Yes,Real estate ads,Internet advertisements,1--3 times,3.0,Yes,Yes,Yes,Yes,Yes,Neutral,Agree,Neutral,Strongly Agree
+Female,Yes,5,5,6,other,Cartoon ads,3.0,Internet,Yes,Charities advertisements,Internet advertisements,1--3 times,5.0,Yes,Yes,Yes,Yes,Yes,Strongly Disagree,Neutral,Neutral,Strongly Disagree
+Female,Yes,4,3,2,other,Funny ads,6.0,TV,Yes,Charities advertisements,TV advertisements,6--9 times,2.0,No,No,Yes,No,Yes,Neutral,Neutral,Agree,Strongly Agree
+Female,Yes,5,5,4,other,Cartoon ads,2.0,Internet,No,Charities advertisements,Internet advertisements,1--3 times,4.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Strongly Disagree,Neutral,Strongly Agree
+Female,No,1,1,2,Zain ad,Funny ads,3.0,TV,Yes,Charities advertisements,TV advertisements,3--6 times,1.0,Yes,No,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Strongly Agree,Agree
+Female,Yes,5,5,4,Vodafone ad,Emotional ads,6.0,TV,Yes,Charities advertisements,TV advertisements,3--6 times,3.0,Yes,Yes,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Neutral,Agree
+Female,Yes,3,2,4,other,Funny ads,4.0,TV,Yes,Charities advertisements,Internet advertisements,1--3 times,2.0,No,Yes,No,No,Yes,Agree,Agree,Strongly Disagree,Agree
+Female,Yes,4,3,2,other,Cartoon ads,4.0,Internet,No,Telecom companies advertisements,Internet advertisements,3--6 times,3.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Neutral,Agree,Neutral
+Female,Yes,5,5,2,Vodafone ad,Cartoon ads,5.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,3--6 times,4.0,Yes,Yes,Yes,Yes,Yes,Strongly Agree,Neutral,Agree,Agree
+Female,Yes,3,3,6,Vodafone ad,Cartoon ads,9.0,TV,Yes,Charities advertisements,TV advertisements,1--3 times,4.0,No,Yes,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Strongly Agree,Agree
+Male,Yes,4,4,4,other,Funny ads,5.0,TV,Yes,Charities advertisements,TV advertisements,1--3 times,2.0,No,Yes,Yes,Yes,Yes,Agree,Neutral,Neutral,Strongly Agree
+Female,Yes,3,3,2,other,Funny ads,5.0,TV,No,Telecom companies advertisements,TV advertisements,1--3 times,1.0,No,No,Yes,No,Yes,Agree,Agree,Agree,Agree
+Female,Yes,3,3,6,Vodafone ad,Cartoon ads,5.0,TV,Yes,Real estate ads,TV advertisements,1--3 times,2.0,No,No,No,No,Yes,Strongly Agree,Agree,Agree,Strongly Agree
+Male,Yes,3,3,2,Vodafone ad,Funny ads,2.0,Internet,No,business ads,TV advertisements,1--3 times,1.0,Yes,Yes,No,Yes,No,Neutral,Disagree,Strongly Agree,Strongly Agree
+Male,Yes,5,5,4,Etisalat ad,Cartoon ads,6.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,3--6 times,3.0,No,Yes,No,Yes,No,Disagree,Disagree,Disagree,Disagree
+Male,Yes,4,5,more than 6,Zain ad,Funny ads,10.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,6--9 times,5.0,Yes,Yes,Yes,Yes,Yes,Agree,Agree,Agree,Neutral
+Female,Yes,3,2,4,other,Funny ads,1.0,Internet,Yes,Telecom companies advertisements,TV advertisements,1--3 times,3.0,No,No,Yes,Yes,Yes,Strongly Agree,Agree,Agree,Strongly Agree
+Female,Yes,2,1,2,Etisalat ad,Emotional ads,4.0,Internet,Yes,business ads,Internet advertisements,1--3 times,1.0,No,Yes,No,Yes,Yes,Agree,Strongly Agree,Agree,Strongly Agree
+Male,Yes,5,5,6,Zain ad,Funny ads,10.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,1--3 times,5.0,Yes,Yes,Yes,Yes,Yes,Strongly Agree,Strongly Agree,Disagree,Disagree
+Male,Yes,5,4,4,Vodafone ad,Emotional ads,5.0,TV,No,business ads,Internet advertisements,1--3 times,3.0,Yes,Yes,Yes,Yes,Yes,Neutral,Neutral,Neutral,Strongly Agree
+Male,Yes,3,3,2,Vodafone ad,Cartoon ads,4.0,Internet,Yes,Telecom companies advertisements,Internet advertisements,1--3 times,2.0,Yes,Yes,Yes,Yes,Yes,Agree,Strongly Agree,Strongly Disagree,Strongly Disagree

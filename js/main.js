@@ -107,111 +107,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile navigation (clean, targeted to .site-nav)
+    // Mobile navigation
     const initMobileNav = () => {
-        const toggle = document.querySelector('.mobile-nav-toggle');
-        const nav = document.querySelector('#site-nav') || document.querySelector('.site-nav');
-
-        if (!toggle || !nav) return;
-
-        // Ensure a single backdrop element exists
-        let backdrop = document.querySelector('.site-nav-backdrop');
-        if (!backdrop) {
-            backdrop = document.createElement('div');
-            backdrop.className = 'site-nav-backdrop';
-            document.body.appendChild(backdrop);
-        }
-
-        // Focus handling for accessibility
-        const focusableSelectors = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-        let previousActive = null;
-        let keydownHandler = null;
-
-        const openNav = () => {
-            nav.classList.add('active');
-            toggle.classList.add('active');
-            document.body.classList.add('nav-open');
-            toggle.setAttribute('aria-expanded', 'true');
-            backdrop.classList.add('visible');
-            // Prevent background scroll
-            document.body.style.overflow = 'hidden';
-
-            // Save focus and move focus into nav
-            previousActive = document.activeElement;
-            const first = nav.querySelector(focusableSelectors);
-            if (first) first.focus();
-
-            // Trap tab key inside nav
-            keydownHandler = (e) => {
-                if (e.key !== 'Tab') return;
-                const focusable = Array.from(nav.querySelectorAll(focusableSelectors)).filter(el => el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement);
-                if (focusable.length === 0) return;
-                const firstEl = focusable[0];
-                const lastEl = focusable[focusable.length - 1];
-                if (e.shiftKey && document.activeElement === firstEl) {
-                    e.preventDefault();
-                    lastEl.focus();
-                } else if (!e.shiftKey && document.activeElement === lastEl) {
-                    e.preventDefault();
-                    firstEl.focus();
-                }
-            };
-            document.addEventListener('keydown', keydownHandler);
-        };
-
-        const closeNav = () => {
-            nav.classList.remove('active');
-            toggle.classList.remove('active');
-            document.body.classList.remove('nav-open');
-            toggle.setAttribute('aria-expanded', 'false');
-            backdrop.classList.remove('visible');
-            document.body.style.overflow = '';
-
-            // Restore focus and remove trap
-            try { if (previousActive && typeof previousActive.focus === 'function') previousActive.focus(); } catch (err) {}
-            if (keydownHandler) document.removeEventListener('keydown', keydownHandler);
-            keydownHandler = null;
-        };
-
-        const onToggle = (e) => {
-            e.stopPropagation();
-            if (nav.classList.contains('active')) closeNav(); else openNav();
-        };
-
-        // Remove duplicate listeners by cloning if needed
-        const newToggle = toggle.cloneNode(true);
-        toggle.parentNode.replaceChild(newToggle, toggle);
-
-        // Re-assign reference to the new node
-        const boundToggle = document.querySelector('.mobile-nav-toggle');
-        boundToggle.addEventListener('click', onToggle);
-
-        // Backdrop click closes nav
-        backdrop.addEventListener('click', closeNav);
-
-        // Close when a nav link is clicked
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                closeNav();
-            });
-        });
-
-        // Close on Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && nav.classList.contains('active')) {
-                closeNav();
-            }
-        });
-
-        // Close on visibility/orientation/resize changes
-        document.addEventListener('visibilitychange', () => { if (document.hidden) closeNav(); });
-        window.addEventListener('orientationchange', closeNav);
-        window.addEventListener('resize', () => { if (window.innerWidth > 900) closeNav(); });
-    };
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const nav = document.querySelector('nav');
+        
+        if (mobileNavToggle) {
+            // Remove any existing listeners first
+            const newToggle = mobileNavToggle.cloneNode(true);
+            mobileNavToggle.parentNode.replaceChild(newToggle, mobileNavToggle);
             
+            newToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                nav.classList.toggle('active');
+                document.body.classList.toggle('nav-open');
+                newToggle.classList.toggle('active');
+            });
+        }
+    };
+
     // Initialize mobile nav
     initMobileNav();
 
-    // Re-initialize mobile nav after pageshow (history navigation)
+    // Re-initialize mobile nav after each page load
     document.addEventListener('pageshow', initMobileNav);
+
+    // Handle page transitions
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.mobile-nav-toggle');
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                document.body.classList.remove('nav-open');
+                toggle.classList.remove('active');
+            }
+        });
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', (e) => {
+        const nav = document.querySelector('nav.active');
+        const toggle = document.querySelector('.mobile-nav-toggle');
+        if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
+            nav.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    });
 });
