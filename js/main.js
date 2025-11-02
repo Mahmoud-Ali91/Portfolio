@@ -113,6 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('nav');
         
         if (mobileNavToggle && nav) {
+            // Cleanup any existing event listeners
+            const cleanupNav = () => {
+                document.body.classList.remove('nav-open');
+                nav.classList.remove('active');
+                mobileNavToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            // Handle page visibility changes
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    cleanupNav();
+                }
+            });
+
+            // Handle orientation changes
+            window.addEventListener('orientationchange', () => {
+                cleanupNav();
+            });
+
             // Remove any existing listeners first
             const newToggle = mobileNavToggle.cloneNode(true);
             mobileNavToggle.parentNode.replaceChild(newToggle, mobileNavToggle);
