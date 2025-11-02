@@ -1,6 +1,7 @@
-/* Hide bottom navigation by default (desktop) */
-.bottom-nav {
-  display: none;
+/* Hide mobile elements by default (desktop) */
+.bottom-nav,
+.mobile-nav-toggle {
+  display: none !important;
 }
 
 /* Mobile-specific styles */
@@ -13,7 +14,7 @@
 
   /* Bottom Navigation Bar */
   .bottom-nav {
-    display: flex;
+    display: flex !important;
     position: fixed;
     bottom: 0;
     left: 0;
