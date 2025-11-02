@@ -112,17 +112,59 @@ document.addEventListener('DOMContentLoaded', () => {
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const nav = document.querySelector('nav');
         
-        if (mobileNavToggle) {
+        if (mobileNavToggle && nav) {
             // Remove any existing listeners first
             const newToggle = mobileNavToggle.cloneNode(true);
             mobileNavToggle.parentNode.replaceChild(newToggle, mobileNavToggle);
             
-            newToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                nav.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
-                newToggle.classList.toggle('active');
+            // Toggle menu function
+            const toggleMenu = (e) => {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                const isOpen = nav.classList.contains('active');
+                
+                if (isOpen) {
+                    nav.classList.remove('active');
+                    document.body.classList.remove('nav-open');
+                    newToggle.classList.remove('active');
+                    // Enable scrolling
+                    document.body.style.overflow = '';
+                } else {
+                    nav.classList.add('active');
+                    document.body.classList.add('nav-open');
+                    newToggle.classList.add('active');
+                    // Prevent background scrolling
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            // Toggle on button click
+            newToggle.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const isOpen = nav.classList.contains('active');
+                if (isOpen && !nav.contains(e.target) && !newToggle.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && nav.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+
+            // Close menu when clicking a link
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
             });
         }
     };
