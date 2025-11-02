@@ -1,3 +1,8 @@
+/* Hide bottom navigation by default (desktop) */
+.bottom-nav {
+  display: none;
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
   /* Hide desktop navigation and toggle */

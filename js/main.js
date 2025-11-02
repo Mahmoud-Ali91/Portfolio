@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Portfolio loaded successfully.");
 
+    // Remove any existing mobile navigation elements from previous page
+    const existingNav = document.querySelector('.mobile-nav-toggle');
+    if (existingNav) {
+        existingNav.remove();
+    }
+
     // Header scroll behavior
     let lastScroll = 0;
     const header = document.querySelector('header');
