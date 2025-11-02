@@ -107,114 +107,79 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile navigation
+    // Mobile navigation (clean, targeted to .site-nav)
     const initMobileNav = () => {
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const nav = document.querySelector('nav');
-        
-        if (mobileNavToggle && nav) {
-            // Cleanup any existing event listeners
-            const cleanupNav = () => {
-                document.body.classList.remove('nav-open');
-                nav.classList.remove('active');
-                mobileNavToggle.classList.remove('active');
-                document.body.style.overflow = '';
-            };
+        const toggle = document.querySelector('.mobile-nav-toggle');
+        const nav = document.querySelector('#site-nav') || document.querySelector('.site-nav');
 
-            // Handle page visibility changes
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    cleanupNav();
-                }
-            });
+        if (!toggle || !nav) return;
 
-            // Handle orientation changes
-            window.addEventListener('orientationchange', () => {
-                cleanupNav();
-            });
-
-            // Remove any existing listeners first
-            const newToggle = mobileNavToggle.cloneNode(true);
-            mobileNavToggle.parentNode.replaceChild(newToggle, mobileNavToggle);
-            
-            // Toggle menu function
-            const toggleMenu = (e) => {
-                if (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                const isOpen = nav.classList.contains('active');
-                
-                if (isOpen) {
-                    nav.classList.remove('active');
-                    document.body.classList.remove('nav-open');
-                    newToggle.classList.remove('active');
-                    // Enable scrolling
-                    document.body.style.overflow = '';
-                } else {
-                    nav.classList.add('active');
-                    document.body.classList.add('nav-open');
-                    newToggle.classList.add('active');
-                    // Prevent background scrolling
-                    document.body.style.overflow = 'hidden';
-                }
-            };
-
-            // Toggle on button click
-            newToggle.addEventListener('click', toggleMenu);
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                const isOpen = nav.classList.contains('active');
-                if (isOpen && !nav.contains(e.target) && !newToggle.contains(e.target)) {
-                    toggleMenu();
-                }
-            });
-
-            // Close menu when pressing Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && nav.classList.contains('active')) {
-                    toggleMenu();
-                }
-            });
-
-            // Close menu when clicking a link
-            nav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (nav.classList.contains('active')) {
-                        toggleMenu();
-                    }
-                });
-            });
+        // Ensure a single backdrop element exists
+        let backdrop = document.querySelector('.site-nav-backdrop');
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'site-nav-backdrop';
+            document.body.appendChild(backdrop);
         }
-    };
 
+        const openNav = () => {
+            nav.classList.add('active');
+            toggle.classList.add('active');
+            document.body.classList.add('nav-open');
+            toggle.setAttribute('aria-expanded', 'true');
+            backdrop.classList.add('visible');
+            // Prevent background scroll
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeNav = () => {
+            nav.classList.remove('active');
+            toggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            backdrop.classList.remove('visible');
+            document.body.style.overflow = '';
+        };
+
+        const onToggle = (e) => {
+            e.stopPropagation();
+            if (nav.classList.contains('active')) closeNav(); else openNav();
+        };
+
+        // Remove duplicate listeners by cloning if needed
+        const newToggle = toggle.cloneNode(true);
+        toggle.parentNode.replaceChild(newToggle, toggle);
+
+        // Re-assign reference to the new node
+        const boundToggle = document.querySelector('.mobile-nav-toggle');
+        boundToggle.addEventListener('click', onToggle);
+
+        // Backdrop click closes nav
+        backdrop.addEventListener('click', closeNav);
+
+        // Close when a nav link is clicked
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeNav();
+            });
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                closeNav();
+            }
+        });
+
+        // Close on visibility/orientation/resize changes
+        document.addEventListener('visibilitychange', () => { if (document.hidden) closeNav(); });
+        window.addEventListener('orientationchange', closeNav);
+        window.addEventListener('resize', () => { if (window.innerWidth > 900) closeNav(); });
+    };
+            
     // Initialize mobile nav
     initMobileNav();
 
-    // Re-initialize mobile nav after each page load
+    // Re-initialize mobile nav after pageshow (history navigation)
     document.addEventListener('pageshow', initMobileNav);
-
-    // Handle page transitions
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            const nav = document.querySelector('nav');
-            const toggle = document.querySelector('.mobile-nav-toggle');
-            if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                document.body.classList.remove('nav-open');
-                toggle.classList.remove('active');
-            }
-        });
-    });
-
-    // Close mobile nav when clicking outside
-    document.addEventListener('click', (e) => {
-        const nav = document.querySelector('nav.active');
-        const toggle = document.querySelector('.mobile-nav-toggle');
-        if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
-            nav.classList.remove('active');
-            document.body.classList.remove('nav-open');
-        }
-    });
 });
