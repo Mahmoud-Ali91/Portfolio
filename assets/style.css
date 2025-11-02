@@ -700,7 +700,7 @@ footer {
   }
 
   nav {
-    display: none; /* Hide regular nav on mobile */
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
     position: fixed;
@@ -712,13 +712,14 @@ footer {
     background: var(--surface-color);
     padding: 5rem 2rem;
     box-shadow: var(--shadow-lg);
-    transition: right var(--transition-normal);
+    transition: transform var(--transition-normal);
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
   }
 
   nav.active {
-    display: flex;
-    right: 0;
+    transform: translateX(-100%);
   }
 
   .mobile-nav-toggle {
