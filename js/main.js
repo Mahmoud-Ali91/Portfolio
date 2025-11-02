@@ -102,34 +102,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile navigation
-    const setupMobileNav = () => {
-        const header = document.querySelector('header');
-        if (!header.querySelector('.mobile-nav-toggle')) {
-            const toggle = document.createElement('button');
-            toggle.className = 'mobile-nav-toggle';
-            toggle.setAttribute('aria-label', 'Toggle navigation');
-            toggle.innerHTML = '<span></span><span></span><span></span>';
-            header.appendChild(toggle);
-
-            toggle.addEventListener('click', () => {
-                const nav = document.querySelector('nav');
-                nav.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
-            });
-        }
-    };
-
-    // Initialize mobile nav if screen is small
-    if (window.innerWidth <= 768) {
-        setupMobileNav();
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+            mobileNavToggle.classList.toggle('active');
+        });
     }
-
-    // Update on resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth <= 768) {
-            setupMobileNav();
-        }
-    });
 
     // Close mobile nav when clicking outside
     document.addEventListener('click', (e) => {
