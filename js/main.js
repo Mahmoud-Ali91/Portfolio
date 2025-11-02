@@ -122,6 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(backdrop);
         }
 
+        // Focus handling for accessibility
+        const focusableSelectors = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        let previousActive = null;
+        let keydownHandler = null;
+
         const openNav = () => {
             nav.classList.add('active');
             toggle.classList.add('active');
@@ -130,6 +135,28 @@ document.addEventListener('DOMContentLoaded', () => {
             backdrop.classList.add('visible');
             // Prevent background scroll
             document.body.style.overflow = 'hidden';
+
+            // Save focus and move focus into nav
+            previousActive = document.activeElement;
+            const first = nav.querySelector(focusableSelectors);
+            if (first) first.focus();
+
+            // Trap tab key inside nav
+            keydownHandler = (e) => {
+                if (e.key !== 'Tab') return;
+                const focusable = Array.from(nav.querySelectorAll(focusableSelectors)).filter(el => el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement);
+                if (focusable.length === 0) return;
+                const firstEl = focusable[0];
+                const lastEl = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === firstEl) {
+                    e.preventDefault();
+                    lastEl.focus();
+                } else if (!e.shiftKey && document.activeElement === lastEl) {
+                    e.preventDefault();
+                    firstEl.focus();
+                }
+            };
+            document.addEventListener('keydown', keydownHandler);
         };
 
         const closeNav = () => {
@@ -139,6 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.setAttribute('aria-expanded', 'false');
             backdrop.classList.remove('visible');
             document.body.style.overflow = '';
+
+            // Restore focus and remove trap
+            try { if (previousActive && typeof previousActive.focus === 'function') previousActive.focus(); } catch (err) {}
+            if (keydownHandler) document.removeEventListener('keydown', keydownHandler);
+            keydownHandler = null;
         };
 
         const onToggle = (e) => {
